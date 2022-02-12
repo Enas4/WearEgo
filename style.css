@@ -1,0 +1,579 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Fira Sans", sans-serif;
+  overflow: visible;
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.main {
+  flex: 1;
+}
+
+/* **************************** */
+/* sidebar menu begins */
+/* **************************** */
+
+menu {
+  list-style-type: none;
+  width: 0px;
+  background: white;
+  height: 100vh;
+  overflow: scroll;
+  cursor: pointer;
+}
+.sidebar-span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(240, 240, 240, 0.966);
+  padding: 6px;
+}
+.sidebar li {
+  margin: 10px;
+}
+.sidebar-span p {
+  font-size: 14px;
+  color: rgb(88, 88, 88);
+  font-weight: lighter;
+}
+a {
+  text-decoration: none;
+}
+.sidebar p {
+  font-size: 12px;
+}
+.new-arrival {
+  font-size: 22px;
+  font-weight: 700;
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  padding-left: 5px;
+}
+.same-size {
+  padding: 15px 10px;
+}
+.same-size a {
+  font-size: 14px;
+  color: rgb(112, 112, 112);
+}
+.same-color,
+.sale-menu {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px;
+  padding-left: 10px;
+  background-color: #efefef;
+}
+.sale-menu {
+  padding: 15px 10px;
+  background-color: crimson;
+  color: #fff;
+}
+.same-color a {
+  color: rgba(0, 0, 0, 0.74);
+}
+.sale-menu a {
+  color: #fff;
+}
+.cross {
+  display: flex;
+  align-items: center;
+}
+.cross span {
+  flex-grow: 1;
+  text-align: center;
+  margin-left: -30px;
+}
+.fa-plus {
+  font-size: 15px;
+  font-weight: lighter;
+  color: rgb(100, 99, 99);
+}
+
+/* ************************** */
+/* sidebar menu ends */
+/* ************************** */
+
+/* *****************************
+ header static starts
+***************************** */
+
+.header-static {
+  background-color: rgba(240, 240, 240, 0.966);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+.header-static p {
+  font-size: 12px;
+  flex-grow: 1;
+  text-align: center;
+  color: rgb(88, 88, 88);
+}
+.header-cancel {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* *****************************
+ header static ends
+***************************** */
+
+/* *****************************
+header fluid starts
+*****************************  */
+.fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 52px;
+}
+.appear-ego img {
+  width: 150px;
+  height: 30px;
+}
+.ego-img {
+  vertical-align: middle;
+  width: 180px;
+  height: 40px;
+}
+.fluid-ul {
+  list-style: none;
+  display: flex;
+  gap: 38px;
+}
+.fluid-ul li a,
+.nested-div li a {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.fluid-ul li a:hover {
+  color: rgb(180, 179, 179);
+}
+.logo-clicks {
+  display: flex;
+  gap: 20px;
+}
+.logo-click {
+  display: flex;
+  display: none;
+}
+.logo-click a i {
+  margin-left: 10px;
+}
+.shopping-cart {
+  position: relative;
+}
+sup {
+  position: absolute;
+  top: -12px;
+  right: -16px;
+  background-color: black;
+  padding: 2px 5px;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+}
+.logo-clicks a i,
+.logo-click a i {
+  font-weight: lighter;
+  color: black;
+}
+.sale {
+  color: red !important;
+}
+.fa-chevron-down {
+  font-size: 10px;
+  font-weight: lighter;
+}
+#cancelIcon,
+.appear-ego {
+  display: none;
+}
+.nested {
+  position: absolute;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+  box-shadow: 0 0 15px #0000001a;
+  visibility: hidden;
+  transition: all 0.2s linear;
+}
+.open-ego:hover + .nested {
+  top: 80px;
+  visibility: visible;
+}
+.nested-div {
+  list-style: none;
+}
+.nested-div li {
+  margin-bottom: 25px;
+}
+
+/* ************************ */
+/* Fixed navbar css */
+/* ********************** */
+
+#navArea.is-fixed {
+  position: fixed;
+  top: 0;
+  padding: 8px 30px 8px 10px;
+  background-color: white;
+  box-shadow: 0 0 7px #0003;
+  transition: all 0.5s linear;
+}
+#navArea.is-fixed a {
+  color: #000;
+}
+@media screen and (max-width: 1024px) {
+  .fluid {
+    padding: 10px 18px 5px 10px;
+  }
+  .hide-ego,
+  .hide,
+  .search {
+    display: none;
+  }
+  .appear-ego {
+    display: block;
+  }
+  .logo-click {
+    display: flex;
+  }
+}
+/* *****************************
+header fluid ends
+*****************************  */
+
+/* *****************************
+  main section & Exclusive starts here
+*****************************  */
+.mainDiv,
+.exclusive,
+.edge {
+  width: 100%;
+  margin-bottom: 3%;
+}
+.grid--two--columns {
+  margin-bottom: 5%;
+}
+.mainDiv img,
+.exclusive img,
+.edge img,
+.soul img {
+  width: 100%;
+}
+.mainDiv-res,
+.flat50,
+.edge-res {
+  display: none;
+}
+/* *****************************
+  main section & Exclusive ends here
+*****************************  */
+
+/* ********************************
+Four div starts here 
+******************************** */
+.grid--two--columns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3%;
+  padding: 0 4%;
+}
+.grid--two--columns img {
+  width: 100%;
+}
+
+/*  ********************************
+Four div ends here 
+******************************** */
+
+/*  ********************************
+Footer starts here 
+******************************** */
+
+.footer {
+  display: flex;
+  font-size: 0.8em;
+  padding: 3% 5% 3% 5%;
+  width: 100%;
+  background-color: #f5f5f5;
+  flex-wrap: wrap;
+  margin-top: -5px;
+}
+.footer b {
+  color: #000;
+}
+.footer p {
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  color: rgb(82, 80, 80);
+}
+.footer a {
+  color: rgb(77, 75, 75);
+}
+.accordion {
+  padding-left: 30px;
+  width: 25%;
+}
+.accordion-item-header {
+  margin-bottom: 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+.footer ul {
+  margin-left: 0;
+  color: rgb(77, 75, 75);
+  list-style-type: none;
+}
+.accordion-item-body li {
+  padding: 4px 0px;
+  transition: all 0.5s ease-in-out;
+}
+.accordion-item-body li:hover a {
+  color: rgb(119, 118, 118);
+}
+.accordion-item-body li:hover,
+.accordion-item-body {
+  margin-left: 15px;
+  list-style-type: square;
+}
+.news-h4 {
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.footer input {
+  padding: 10px 18px;
+  background-color: #fff;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-family: Fira Sans, sans-serif;
+}
+input::-webkit-input-placeholder {
+  color: rgb(146, 146, 146);
+}
+.footer button {
+  width: auto;
+  cursor: pointer;
+  border: none;
+  padding: 10px 25px;
+  background-color: #131313;
+  letter-spacing: 0.02em;
+  color: #ddd;
+  font-family: Fira Sans, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+.fa-facebook-f {
+  margin-right: 20px;
+}
+/*  ********************************
+Footer ends here 
+******************************** */
+
+/*  ********************************
+Black footer starts here 
+******************************** */
+
+.black-footer {
+  background: #131313;
+  clear: both;
+  padding: 15px 0;
+  border-top: 1px dotted #dddddd;
+  cursor: pointer;
+}
+.black-footer p {
+  text-align: center;
+  color: #f5f5f5;
+  font-size: 0.8em;
+}
+.black-footer span {
+  color: #f00;
+}
+.black-footer span:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+/*  ********************************
+Black footer ends here 
+******************************** */
+
+/*  ********************************
+Sticky icons starts here 
+******************************** */
+.watsapp {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+.chatbot {
+  position: fixed;
+  bottom: 30px;
+  right: 80px;
+  max-width: fit-content;
+  color: #fff;
+  background-color: #000;
+  border-radius: 8px;
+  display: flex;
+}
+.chatbot-details {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.chatbot-logo {
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.img-div img {
+  height: 40px;
+}
+.chatbot-para {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  line-height: 20px;
+}
+.chatbot-btn {
+  display: flex;
+  flex-grow: 1;
+  gap: 1px;
+}
+.chatbot-btn button {
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+.first-btn {
+  border-bottom-left-radius: 8px;
+}
+.triangle {
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid #1a1a1a;
+  border-right: 15px solid transparent;
+}
+.bell-icon {
+  border-radius: 50%;
+  padding: 10px 12px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  background-color: #000;
+  position: absolute;
+  bottom: 0px;
+  right: -60px;
+}
+
+/*  ********************************
+Sticky icons ends here 
+******************************** */
+/* **********************************
+Media Queries
+********************************** */
+
+@media screen and (max-width: 1043px) {
+  .footer {
+    padding: 3% 1.5%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .address,
+  .accordion,
+  .newsletter {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .newsletter {
+    padding-right: 40px;
+    margin-right: 20px;
+  }
+}
+@media screen and (max-width: 766px) {
+  .mainDiv,
+  .exclusive,
+  .edge {
+    display: none;
+  }
+  .flat50,
+  .edge-res {
+    display: block;
+  }
+  .mainDiv-res {
+    display: block;
+  }
+  .address,
+  .accordion,
+  .newsletter {
+    width: 100%;
+  }
+  .address,
+  .accordion,
+  .accordion-item-header,
+  .news-h4 {
+    margin-bottom: 15px;
+  }
+  .address,
+  .accordion {
+    border-bottom: 1px solid lightgray;
+  }
+  .accordion {
+    padding-left: 0;
+  }
+  .accordion-item-header::after {
+    content: "\f106";
+    font-family: FontAwesome;
+    float: right;
+  }
+  .accordion-item-header.active::after {
+    content: "\f107";
+  }
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .black-footer {
+    padding: 15px;
+  }
+  .chatbot-details,
+  .triangle {
+    display: none;
+  }
+}
